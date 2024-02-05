@@ -5,45 +5,103 @@ body {
     font-family: sans-serif;
 }
 
-
-/*NAVIGATION*/
-nav {
-    display: flex;
-    height: 3.6em;
-    top: 0;
-    position: sticky;
-    z-index: 999;
-    background-color: #dbba3f;
-}
-
-nav img {
-    height: 2.2em;
-}
-
-
-/*HERO*/
-#hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-right: 10em
-}
-
-#hero img {
-    height: 24em;
+body p {
+    line-height: 1.6em;
 }
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+:root {
+    --site-padding: 0.5em 10em 0.5em 10em;
+}
+
+/*NAVIGATION*/
+nav {
+    top: 0;
+    position: sticky;
+    z-index: 999;
+    display: flex;
+    max-height: 3.8em;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--site-padding);
+    background-color: #dbba3f;
+    list-style: none;
+}
+
+.nav-menu {
+    list-style: none;
+    text-decoration: none;
+}
+
+nav button {
+    padding: 10px;
+    margin: 0;
+    border: none;
+    color: black;
+    background-color: transparent;
+}
+
+nav img {
+    height: 3em;
+}
+
+.hamburger {
+    display: none;
+}
+
+
+/*HERO*/
+#hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4em;
+    margin-right: 8em;
+}
+
+#hero img {
+    height: 36em;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-text{
+    width: 100%;
+    justify-content: center;
+    align-items: bottom;
+}
 
 /*MAIN*/
 main {
-    margin: 0em 8em 0em 8em;
+    padding: var(--site-padding);
+}
+
+main h1 {
+    text-align: center;
+    font-size: 3em;
+    margin: 1.2em;
 }
 
 main div {
-    padding-top: 2.4em;
+    padding-bottom: 3.6em;
+}
+
+main h2 {
+    font-size: 2.2em;
+    margin: 0;
+}
+
+main h4 {
+    font-size: 1.8em;
+    margin: 0.2em 0em 0.4em 0em;
+}
+
+main h5 {
+    background-color: rgb(208, 208, 208);
+    padding: 0.2em;
+    border-radius: 0.5em;
 }
 
 
@@ -51,5 +109,120 @@ main div {
 footer {
     height: 3em;
     text-align: center;
+    padding: var(--site-padding);
     background-color: #dbba3f;
+}
+
+
+
+
+/*RESPONSIVE*/
+/* Media query for IPad Pros - less tha 1024*/
+@media screen and (max-width: 64em) {
+
+    :root {
+        --site-padding: 0.5em 5em 0.5em 5em;
+    }
+    main {
+        display: block;
+    }
+
+    #hero {
+        gap: 3em;
+        margin-right: 6em;
+    }
+
+}
+
+/* Media query for IPad Minis - less tha 768*/
+@media screen and (max-width: 48em) {
+    :root {
+        --site-padding: 0.5em 4em 0.5em 4em;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -120%;
+        top: 3rem;
+        flex-direction: column;
+        background-color: #fff;
+        height: auto;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    #hero {
+        gap: 2em;
+        margin-right: 4em;
+    }
+    
+    main {
+        display: block;
+    }
+
+    main img {
+        max-height: 18em;
+    }
+}
+
+/* Media query for Phones - less tha 480px*/
+@media screen and (max-width: 30em) {
+    /*Links are blue?????? change that maybe*/
+    :root {
+        --site-padding: 0.3em 1em 0.3em 1em;
+    }
+
+    h1 {
+        font-size: 1.875em;
+    }
+    
+    h2 {
+        font-size: 1.625em;
+    }
+    
+    h3 {
+        font-size: 1.25em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+
+    nav {
+        padding: 0.375em;
+    }
+
+    #hero {
+        display: block;
+        min-height: 22em;
+        margin: 0;
+    }
+  
+    #hero img {
+        height: 18em;
+    }
+
+    .hero-text {
+        padding: var(--site-padding);
+        width: auto;
+    }
+
+    main {
+        display: block;
+    }
+
+    main img {
+        max-height: 16em;
+    }
+
 }

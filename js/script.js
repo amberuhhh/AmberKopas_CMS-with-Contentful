@@ -1,3 +1,26 @@
+//HAMBURGER MENU
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+
+
+//GRAB FROM CONTENTFUL
 console.log("Hello World!");
 
 var client = contentful.createClient({
@@ -17,24 +40,24 @@ var placeForContent = document.getElementById('place-for-content');
         console.log("entry:");
         console.log(entry);
       // if statement chechs that this field exists  
-      var entryDiv = document.createElement ('div');
+      var textDiv = document.createElement ('div');
         if (entry.fields.name) {
 
             var name = document.createElement('h2');
             name.innerHTML = entry.fields.name;
-            entryDiv.appendChild(name);
+            textDiv.appendChild(name);
 
             var bookTags = document.createElement('h5');
             bookTags.innerHTML = entry.fields.bookTags;
-            entryDiv.appendChild(bookTags);
+            textDiv.appendChild(bookTags);
 
             var cost = document.createElement('h4');
             cost.innerHTML = entry.fields.cost;
-            entryDiv.appendChild(cost);
+            textDiv.appendChild(cost);
 
             var description = document.createElement('p');
             description.innerHTML = entry.fields.description;
-            entryDiv.appendChild(description);
+            textDiv.appendChild(description);
 
             // var link = document.createElement('a')
             // link.innerHTML = "link to " + entry.fields.name;
@@ -44,9 +67,11 @@ var placeForContent = document.getElementById('place-for-content');
             // do whatever with the info in the field
             console.log(entry.fields.name);
         }
-            placeForContent.appendChild(entryDiv);
+            placeForContent.appendChild(textDiv);
     });
   });
+
+
 
 //   var students = [
 //                 {name:"Greg", grade:"A", subject:"AI", courses:[
