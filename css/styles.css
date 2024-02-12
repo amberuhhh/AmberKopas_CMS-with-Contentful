@@ -69,9 +69,9 @@ nav img {
 }
 
 .hero-text{
+    padding-top: 34%;
     width: 100%;
-    justify-content: center;
-    align-items: bottom;
+
 }
 
 /*MAIN*/
@@ -103,6 +103,12 @@ main h5 {
     background-color: rgb(208, 208, 208);
     padding: 0.2em;
     border-radius: 0.5em;
+}
+
+main p {
+    overflow: scroll;
+    text-overflow: scroll;
+    height: 12em;
 }
 
 
