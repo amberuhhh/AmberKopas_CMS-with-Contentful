@@ -18,6 +18,27 @@ h1 {
     --site-padding: 0.5em 10em 0.5em 10em;
 }
 
+/* Link colour when not hovering*/
+button a:link {
+    color: rgb(32, 32, 32);
+}
+
+/* Link colour of a visited link*/
+button a:visited {
+    color: grey;
+}
+
+/*Link colour when hovering*/
+button a:hover {
+    color: rgb(104, 104, 104);
+}
+
+/*Link colour when clicked*/
+button a:active {
+    color: darkblue;
+}
+
+
 /*NAVIGATION*/
 nav {
     top: 0;
@@ -81,14 +102,17 @@ main {
     padding: var(--site-padding);
 }
 
+#place-for-content {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: 4em;
+    padding: 1.6em 0em 6em 0;
+}
+
 main h1 {
     text-align: center;
     font-size: 3em;
     margin: 1.2em;
-}
-
-main div {
-    padding-bottom: 3.6em;
 }
 
 main h2 {
@@ -111,6 +135,19 @@ main p {
     overflow: scroll;
     text-overflow: scroll;
     height: 12em;
+}
+
+main img { 
+    height: 25em;
+    width: auto;
+    align-items: center;
+}
+
+main button {
+    padding: 0.8em;
+    color: white;
+    background-color: #dbba3f;
+    border: none;
 }
 
 

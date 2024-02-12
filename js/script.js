@@ -39,9 +39,15 @@ var placeForContent = document.getElementById('place-for-content');
     entries.items.forEach(function (entry) {
         console.log("entry:");
         console.log(entry);
-      // if statement chechs that this field exists  
+      // if statement checks that this field exists  
+      var imageDiv = document.createElement ('div');
       var textDiv = document.createElement ('div');
+
         if (entry.fields.name) {
+
+            var bookImage = document.createElement('img');
+            bookImage.src = entry.fields.bookImage.fields.file.url;
+            imageDiv.appendChild(bookImage);
 
             var name = document.createElement('h2');
             name.innerHTML = entry.fields.name;
@@ -59,6 +65,10 @@ var placeForContent = document.getElementById('place-for-content');
             description.innerHTML = entry.fields.description;
             textDiv.appendChild(description);
 
+            var seeMore = document.createElement('p');
+            description.innerHTML = entry.fields.description;
+            textDiv.appendChild(description);
+
             // var link = document.createElement('a')
             // link.innerHTML = "link to " + entry.fields.name;
             // link.href= entry.fields.link;
@@ -66,7 +76,8 @@ var placeForContent = document.getElementById('place-for-content');
 
             // do whatever with the info in the field
             console.log(entry.fields.name);
-        }
+        }            
+            placeForContent.appendChild(imageDiv);
             placeForContent.appendChild(textDiv);
     });
   });
