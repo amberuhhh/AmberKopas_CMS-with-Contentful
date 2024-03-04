@@ -76,7 +76,7 @@ nav img {
 
 
 /*HERO*/
-#hero {
+header {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 4em;
@@ -85,13 +85,13 @@ nav img {
 
 /*THIS SUCKS!!!!!*/
 
-#hero img {
+header img {
     height: 36em;
     width: 100%;
     object-fit: cover;
 }
 
-.hero-text{
+.header-text{
     padding-top: 34%;
     width: 100%;
 
@@ -173,7 +173,7 @@ footer {
         display: block;
     }
 
-    #hero {
+    header {
         gap: 3em;
         margin-right: 6em;
     }
@@ -207,17 +207,27 @@ footer {
         cursor: pointer;
     }
 
-    #hero {
+    header {
         gap: 2em;
         margin-right: 4em;
     }
     
     main {
         display: block;
+        padding: var(--site-padding);
     }
 
     main img {
         max-height: 18em;
+    }
+
+    main p {
+        height: 8em;
+    }
+
+    #place-for-content {
+        grid-template-columns: 0.4fr 1.6fr;
+        gap: 3em;
     }
 }
 
@@ -225,7 +235,7 @@ footer {
 @media screen and (max-width: 30em) {
     /*Links are blue?????? change that maybe*/
     :root {
-        --site-padding: 0.3em 1em 0.3em 1em;
+        --site-padding: 0.4em 1em 0.4em 1em;
     }
 
     h1 {
@@ -248,30 +258,37 @@ footer {
         padding: 0.375em;
     }
 
-    #hero {
+    header {
         display: block;
         min-height: 22em;
         margin: 0;
     }
   
-    #hero img {
+    header img {
         height: 18em;
     }
 
-    .hero-text {
+    .header-text {
         padding: var(--site-padding);
         width: auto;
     }
 
     main {
         display: block;
+        padding: var(--site-padding);
     }
 
     main img {
         max-height: 16em;
     }
 
+    main p {
+        height: 18em;
+    }
+
+    #place-for-content > * {
+        display: inline-block;
+        border-bottom: solid 0.5em #dbba3f;
+    }
+
 }
-
-
-/*githut doesnt upload nicely*/

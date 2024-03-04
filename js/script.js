@@ -65,10 +65,6 @@ var placeForContent = document.getElementById('place-for-content');
             description.innerHTML = entry.fields.description;
             textDiv.appendChild(description);
 
-            var seeMore = document.createElement('p');
-            description.innerHTML = entry.fields.description;
-            textDiv.appendChild(description);
-
             // var link = document.createElement('a')
             // link.innerHTML = "link to " + entry.fields.name;
             // link.href= entry.fields.link;
