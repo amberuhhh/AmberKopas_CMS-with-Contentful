@@ -40,7 +40,7 @@ var placeForContent = document.getElementById('place-for-content');
         console.log("entry:");
         console.log(entry);
       // if statement checks that this field exists  
-      var imageDiv = document.createElement ('div');
+      var imageDiv = document.createElement ('aside');
       var textDiv = document.createElement ('div');
 
         if (entry.fields.name) {
@@ -65,24 +65,22 @@ var placeForContent = document.getElementById('place-for-content');
             description.innerHTML = entry.fields.description;
             textDiv.appendChild(description);
 
-            if (entry.fields.description) {
-              var button = document.createElement('button');
-              button.innerHTML = entry.fields.button;
-              button.innerHTML = ('SEE MORE');
-              textDiv.appendChild(button);
-            }
+            var linkToDetails = document.createElement('a');
+            linkToDetails.innerHTML = entry.fields.button;
+            linkToDetails.href = 'details.html';
+            textDiv.appendChild(linkToDetails);
 
-
-            // var link = document.createElement('a')
+            // var link = document.createElement('button')
             // link.innerHTML = "link to " + entry.fields.name;
             // link.href= entry.fields.link;
             // placeForContent.appendChild(link);
 
             // do whatever with the info in the field
             console.log(entry.fields.name);
-        }            
-            placeForContent.appendChild(imageDiv);
-            placeForContent.appendChild(textDiv);
+        }  
+
+        placeForContent.appendChild(imageDiv);
+        placeForContent.appendChild(textDiv);
     });
   });
 //please github

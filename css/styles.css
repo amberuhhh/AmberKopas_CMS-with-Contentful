@@ -142,7 +142,9 @@ main img {
     align-items: center;
 }
 
-main button {
+main a {
+    height: 1em;
+    width: 6em;
     padding: 0.8em;
     color: white;
     background-color: var(--yellow-colour);
