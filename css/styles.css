@@ -1,5 +1,10 @@
 /*TESTING!!!!!!!!!!!!*/
 /*BASE*/
+:root {
+    --site-padding: 0.5em 10em 0.5em 10em;
+    --yellow-colour:#dbba3f;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -12,10 +17,6 @@ body p {
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-:root {
-    --site-padding: 0.5em 10em 0.5em 10em;
 }
 
 /* Link colour when not hovering*/
@@ -49,7 +50,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: var(--site-padding);
-    background-color: #dbba3f;
+    background-color: var(--yellow-colour);
     list-style: none;
 }
 
@@ -82,8 +83,6 @@ header {
     gap: 4em;
     margin-right: 8em;
 }
-
-/*THIS SUCKS!!!!!*/
 
 header img {
     height: 36em;
@@ -146,7 +145,7 @@ main img {
 main button {
     padding: 0.8em;
     color: white;
-    background-color: #dbba3f;
+    background-color: var(--yellow-colour);
     border: none;
 }
 
@@ -156,7 +155,7 @@ footer {
     height: 3em;
     text-align: center;
     padding: var(--site-padding);
-    background-color: #dbba3f;
+    background-color: var(--yellow-colour);
 }
 
 
@@ -289,6 +288,11 @@ footer {
     #place-for-content > * {
         display: inline-block;
         border-bottom: solid 0.5em #dbba3f;
+    }
+
+    .button {
+        height: 1em;
+        background-color: #dbba3f;
     }
 
 }
