@@ -84,7 +84,6 @@ var placeForContent = document.getElementById('place-for-content');
         placeForContent.appendChild(textDiv);
     });
   });
-//please github
 
 
 //   var students = [
