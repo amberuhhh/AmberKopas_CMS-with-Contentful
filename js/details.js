@@ -19,27 +19,25 @@ function closeMenu() {
 }
 
 
+
 //GRAB FROM CONTENTFUL
-console.log("Hello World!");
+var textInURL = window.location.search;
+var parametersInURL = new URLSearchParams(textInURL);
+var id = parametersInURL.get('id');
+
+console.log(id);
 
 var client = contentful.createClient({
     space: 'jhroq6kjrsy4',
     accessToken: 'zV8UhcSE-aekfCyefr5xPGasK30EwPOOTWfm6RBxnt4',
   });
-
-var placeForContent = document.getElementById('place-for-content');
-
-
+  
+var details = document.getElementById('details');
   // gets all the entries as a json
-  client.getEntries().then(function (entries) {
-    console.log("entries:");
-    console.log(entries);
-    // loops through the json to look at one entry at a time
-    entries.items.forEach(function (entry) {
-        console.log("entry:");
-        console.log(entry);
+  client.getEntry(id).then(function (entry) {
+    console.log(entry);
       // if statement checks that this field exists  
-      var imageDiv = document.createElement ('div');
+      var imageDiv = document.createElement ('aside');
       var textDiv = document.createElement ('div');
 
         if (entry.fields.name) {
@@ -64,16 +62,15 @@ var placeForContent = document.getElementById('place-for-content');
             description.innerHTML = entry.fields.description;
             textDiv.appendChild(description);
 
-
-            // var link = document.createElement('a')
+            // var link = document.createElement('button')
             // link.innerHTML = "link to " + entry.fields.name;
             // link.href= entry.fields.link;
-            // placeForContent.appendChild(link);
+            // detailsPage.appendChild(link);
 
             // do whatever with the info in the field
             console.log(entry.fields.name);
-        }            
-            placeForContent.appendChild(imageDiv);
-            placeForContent.appendChild(textDiv);
+        }  
+
+        details.appendChild(imageDiv);
+        details.appendChild(textDiv);
     });
-  });

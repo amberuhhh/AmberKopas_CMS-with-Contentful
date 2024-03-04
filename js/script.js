@@ -67,7 +67,8 @@ var placeForContent = document.getElementById('place-for-content');
 
             var linkToDetails = document.createElement('a');
             linkToDetails.innerHTML = entry.fields.button;
-            linkToDetails.href = 'details.html';
+            linkToDetails.href = 'details.html?id=' + entry.sys.id;
+            linkToDetails.innerHTML = ('SEE MORE');
             textDiv.appendChild(linkToDetails);
 
             // var link = document.createElement('button')

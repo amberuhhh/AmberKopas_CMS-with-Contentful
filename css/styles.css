@@ -101,7 +101,25 @@ main {
     padding: var(--site-padding);
 }
 
-#place-for-content, #details-page {
+#details {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 2em;
+    padding: 1.6em 0em 6em 0;
+    height: 27em;
+}
+
+#details img {
+    height: 30em;
+}
+
+#details p {
+    overflow: scroll;
+    text-overflow: clip;
+    min-height: 20em;
+}
+
+#place-for-content {
     display: grid;
     grid-template-columns: 0.6fr 1.4fr;
     gap: 4em;
@@ -133,7 +151,7 @@ main h5 {
 main p {
     overflow: scroll;
     text-overflow: scroll;
-    height: 12em;
+    height: 12.8em;
 }
 
 main img { 
@@ -142,14 +160,16 @@ main img {
     align-items: center;
 }
 
-main a {
-    height: 1em;
+main a, button {
+    min-height: 1em;
     width: 6em;
     padding: 0.8em;
     color: white;
     background-color: var(--yellow-colour);
     border: none;
+    text-decoration: none;
 }
+
 
 
 /*FOOTER*/
@@ -184,7 +204,7 @@ footer {
 /* Media query for IPad Minis - less tha 768*/
 @media screen and (max-width: 48em) {
     :root {
-        --site-padding: 0.5em 4em 0.5em 4em;
+        --site-padding: 0.45em 2.4em 0.45em 2.4em;
     }
 
     .nav-menu {
@@ -229,6 +249,15 @@ footer {
     #place-for-content {
         grid-template-columns: 0.4fr 1.6fr;
         gap: 3em;
+    }
+
+    #details {
+        display: inline-block;
+        gap: 2em;
+    }
+    
+    #details img {
+        min-height: 26em;
     }
 }
 
