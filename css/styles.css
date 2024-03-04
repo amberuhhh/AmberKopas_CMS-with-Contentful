@@ -101,7 +101,7 @@ main {
     padding: var(--site-padding);
 }
 
-#place-for-content {
+#place-for-content, #details-page {
     display: grid;
     grid-template-columns: 0.6fr 1.4fr;
     gap: 4em;
