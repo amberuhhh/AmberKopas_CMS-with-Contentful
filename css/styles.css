@@ -207,6 +207,11 @@ footer {
         --site-padding: 0.45em 2.4em 0.45em 2.4em;
     }
 
+    h1, h2, h3, h4, h5 {
+        padding: 0.2em;
+        margin: 0;
+    }
+
     .nav-menu {
         position: fixed;
         left: -120%;
@@ -239,7 +244,7 @@ footer {
     }
 
     main img {
-        max-height: 18em;
+        max-height: 17em;
     }
 
     main p {
@@ -247,7 +252,7 @@ footer {
     }
 
     #place-for-content {
-        grid-template-columns: 0.4fr 1.6fr;
+        grid-template-columns: 0.3fr 1.7fr;
         gap: 3em;
     }
 
@@ -309,23 +314,23 @@ footer {
     }
 
     main img {
-        max-height: 16em;
+        min-height: 16em;
+        width: auto;
+        align-items: center;
+        text-align: center;
     }
 
     main p {
         height: 18em;
     }
 
-    #place-for-content > * {
-        display: inline-block;
-        border-bottom: solid 0.5em #dbba3f;
+    #place-for-content {
+        grid-template-columns: 1fr;
     }
 
-    .button {
-        height: 1em;
-        background-color: #dbba3f;
+    #place-for-content div {
+        border-bottom: solid 0.8em #dbba3f;
     }
-
 }
 
 /*UPDATE GITHUB!!!*/
