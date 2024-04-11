@@ -32,7 +32,7 @@ var placeForContent = document.getElementById('place-for-content');
 
 
   // gets all the entries as a json
-  client.getEntries().then(function (entries) {
+  client.getEntries({content_type: 'johnGrishamBooks',}).then(function (entries) {
     console.log("entries:");
     console.log(entries);
     // loops through the json to look at one entry at a time
